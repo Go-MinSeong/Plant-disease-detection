@@ -29,24 +29,28 @@ Unlike previous studies, we do not input the original image as input, but layer 
 클래스를 늘려 정확도가 떨어질 수 있는 상황에서 이를 방지하고자 디텍션을 사용하여 중요한 부분의 이미지를 다시 한번 강조해주어 더욱 더 분류를 잘 할 수 있도록 하고자 하였습니다.
 
 We realized that detecting a limited number of plant diseases would be inconvenient and difficult for many farmers, so we wanted to create a classifier that could detect more diseases. 
+
 To avoid the possibility of increasing the number of classes and decreasing the accuracy, we used detection to highlight the important parts of the image again for better classification.
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-<h2> Datasets </h2>
+<h1> Datasets </h1>
 
 #####Kaggle - New Plant Diseases Dataset([https://www.kaggle.com/datasets/vipoooool/new-plant-diseases-dataset](https://www.kaggle.com/datasets/vipoooool/new-plant-diseases-dataset))
 
 총 14개의 식물종과 38개의 정상 및 질병 클래스로 구성 
+
 A total of 14 plant species and 38 normal and disease classes 
 
 #####AIHUB - 식물 병 유발 통합 데이터([https://aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=realm&dataSetSn=525](https://aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=realm&dataSetSn=525))
 
 총 12종의 작물 24개의 정상 및 질병 클래스로 구성
+
 A total of 12 crops with 24 normal and disease classes
 
 
 ->> 합쳐서 중복 5개의 클래스를 제외하고 57개의 클래스로 식물 질병 분류
+
 ->> In total, 57 classes of plant diseases, excluding 5 redundant classes.
 
 #### Datasets we've built
@@ -55,9 +59,10 @@ A total of 12 crops with 24 normal and disease classes
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-<h2> Process </h2>
+<h1> Process </h1>
 
 1. 우리는 먼저 부족한 데이터셋의 수량을 보충하기 위해 Data augmentation을 진행했습니다. 명암과 노이즈를 통해 데이터를 증진시켰습니다.
+
 We first augmented the data to make up for the lack of quantity in the dataset: we enhanced the data with contrast and noise.
 
 <p align="center"> 
@@ -65,15 +70,17 @@ We first augmented the data to make up for the lack of quantity in the dataset: 
 
 
 2. 이미지를 인풋으로 받아 MMdetection의 CASCADE R-CNN을 진행하여 이미지에서 식물 잎사귀 부분 혹은 열매의 부분 이미지를 추출합니다. 그 이후, 추출한 이미지를 원본 이미지와 크기를 맞춰 이를 원본 이미지에 쌓아 6channel에 해당하는 인풋 데이터를 생성합니다.
+
 Taking the image as input, MMdetection's CASCADE R-CNN is run to extract partial images of plant leaves or fruits from the image. The extracted images are then scaled to match the original image and stacked on top of the original image to create 6 channels of input data.
 
 
 3. 6채널로 이루어진 인풋 데이터 셋을 RESNET model을 사용하여 분류합니다.
+
 Classify an input dataset of 6 channels using a RESNET model.
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-<h2> Result </h2>
+<h1> Result </h1>
 
 
 
@@ -94,6 +101,9 @@ Classify an input dataset of 6 channels using a RESNET model.
 
 - 제가 키우고 있는 방울토마토 '방울이'를 모델에 주입했을 때의 결과를 보여주고 있습니다. 모델은 방울 토마토의 열매 부분을 탐지하였고 탐지한 이미지는 원본 크기에 맞춰 확대합니다. 이후 왼쪽의 두 이미지는 6channel로 결합하여 변형된 Resnet에 의해 질병 탐지가 진행되어집니다.
 - This shows the results of injecting my cherry tomato "drops" into the model. The model detected the fruit part of the cherry tomato and the detected image is scaled to the original size. The two images on the left are then combined into a 6-channel and disease detection is performed by a modified Resnet.
+
+
+
 
 🎉 다행히 저의 '방울이'는 건강한 것으로 나타났습니다 ~!!!
 Fortunately, my '방울이(Banguli)' turned out to be healthy ~!!!
