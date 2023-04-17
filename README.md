@@ -36,13 +36,13 @@ To avoid the possibility of increasing the number of classes and decreasing the 
 
 <h1> Datasets </h1>
 
-#####Kaggle - New Plant Diseases Dataset([https://www.kaggle.com/datasets/vipoooool/new-plant-diseases-dataset](https://www.kaggle.com/datasets/vipoooool/new-plant-diseases-dataset))
+##### Kaggle - New Plant Diseases Dataset([https://www.kaggle.com/datasets/vipoooool/new-plant-diseases-dataset](https://www.kaggle.com/datasets/vipoooool/new-plant-diseases-dataset))
 
 총 14개의 식물종과 38개의 정상 및 질병 클래스로 구성 
 
 A total of 14 plant species and 38 normal and disease classes 
 
-#####AIHUB - 식물 병 유발 통합 데이터([https://aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=realm&dataSetSn=525](https://aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=realm&dataSetSn=525))
+##### AIHUB - 식물 병 유발 통합 데이터([https://aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=realm&dataSetSn=525](https://aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=realm&dataSetSn=525))
 
 총 12종의 작물 24개의 정상 및 질병 클래스로 구성
 
